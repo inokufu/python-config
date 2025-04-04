@@ -13,7 +13,17 @@
 
 ## Overview
 
-ConfigCore
+ConfigCore provides a minimal, type-safe foundation for building configuration
+systems in Python applications. Rather than being a complete configuration
+solution, it defines contracts and base classes that can be extended to create
+application-specific configuration systems.
+
+The library focuses on:
+
+- 🔄 Providing a standardized way to handle environment selection
+- 📊 Managing log levels consistently across projects
+- 🧩 Offering a base Settings class for extension
+- 📝 Using Pydantic for type validation and .env file loading
 
 ## Setup and installation
 
@@ -24,18 +34,82 @@ ConfigCore
 
 ### Installation
 
+1. Clone the repository
+
+2. Install dependencies
+   ```sh
+   make init
+   ```
+
 ## Usage
+
+### Extending the Base Settings
+
+ConfigCore is designed to be extended in your projects. Here's how to use it:
+
+```python
+from configcore import Settings
+from pydantic import Field
+
+
+class MyAppSettings(Settings):
+  """Application-specific settings extending the base Settings class."""
+
+  # Add your application-specific settings
+  api_url: str = Field(default="https://api.example.com")
+  max_retry_count: int = Field(default=3, ge=1)
+  timeout_seconds: float = Field(default=30.0)
+
+  # Add custom methods as needed
+  def get_api_timeout(self) -> float:
+    if self.is_env_production():
+      return self.timeout_seconds
+    return self.timeout_seconds * 2
+```
+
+### Using Your Configuration
+
+```python
+# In your application
+settings = MyAppSettings()  # Loads from environment variables / .env
+
+# Access standard settings from the base class
+env = settings.get_environment()  # Returns Environment enum
+log_level = settings.get_log_level()  # Returns LogLevel enum
+is_prod = settings.is_env_production()  # Convenience method
+
+# Access your custom settings
+api_url = settings.api_url
+timeout = settings.get_api_timeout()
+```
 
 ## Development
 
 ### Code Formatting and Linting
 
+This project uses ruff for formatting and linting:
+
+```sh
+# Format code
+make format
+
+# Run linters
+make lint
+```
+
+### Running Tests
+
+```sh
+# Run tests with coverage
+make test
+```
+
 ### Environment Variables
 
-| Variable | Description | Required | Default Value | Possible Values |
-|----------|-------------|----------|---------------|-----------------|
-
-### Architecture
+| Variable    | Description             | Default Value | Possible Values                       |
+|-------------|-------------------------|---------------|---------------------------------------|
+| ENVIRONMENT | Application environment | PRODUCTION    | DEVELOPMENT, STAGING, PRODUCTION      |
+| LOG_LEVEL   | Logging level           | INFO          | DEBUG, INFO, WARNING, ERROR, CRITICAL |
 
 ## Contributing
 

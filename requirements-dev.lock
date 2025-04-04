@@ -10,6 +10,8 @@
 #   universal: false
 
 -e file:.
+annotated-types==0.7.0
+    # via pydantic
 babel==2.17.0
     # via mkdocs-material
 backrefs==5.8
@@ -100,6 +102,12 @@ pluggy==1.5.0
     # via diff-cover
     # via pytest
 pre-commit==4.2.0
+pydantic==2.11.2
+    # via pydantic-settings
+pydantic-core==2.33.1
+    # via pydantic
+pydantic-settings==2.8.1
+    # via configcore
 pygments==2.19.1
     # via diff-cover
     # via mkdocs-material
@@ -113,6 +121,8 @@ pytest-cov==6.0.0
 pytest-mock==3.14.0
 python-dateutil==2.9.0.post0
     # via ghp-import
+python-dotenv==1.1.0
+    # via pydantic-settings
 pyyaml==6.0.2
     # via mkdocs
     # via mkdocs-get-deps
@@ -125,6 +135,12 @@ requests==2.32.3
     # via mkdocs-material
 six==1.17.0
     # via python-dateutil
+typing-extensions==4.13.1
+    # via pydantic
+    # via pydantic-core
+    # via typing-inspection
+typing-inspection==0.4.0
+    # via pydantic
 urllib3==2.3.0
     # via requests
 virtualenv==20.30.0
