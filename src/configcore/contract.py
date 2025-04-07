@@ -11,7 +11,8 @@ class ConfigContract(ABC):
     def get_log_level(self) -> LogLevel:
         """Get the log level.
 
-        :return: The log level as a string (LogLevel type).
+        Returns:
+            LogLevel: The log level.
         """
         raise NotImplementedError
 
@@ -19,13 +20,15 @@ class ConfigContract(ABC):
     def get_environment(self) -> Environment:
         """Get the current environment.
 
-        :return: The current environment as a string (Environment type).
+        Returns:
+            Environment: The current environment.
         """
         raise NotImplementedError
 
     def is_env_production(self) -> bool:
         """Check if the current environment is Production.
 
-        :return: True if current environment is Production
+        Returns:
+            bool: True if current environment is Production.
         """
         return self.get_environment() == Environment.PRODUCTION
