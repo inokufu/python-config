@@ -16,6 +16,7 @@ from src.configcore.contract import ConfigContract
 def mock_config() -> Mock:
     """Create a mock config.
 
-    :return: A mock config conforming to ConfigContract
+    Returns:
+        A mock config conforming to ConfigContract
     """
     return Mock(spec=ConfigContract)
