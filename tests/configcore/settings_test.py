@@ -1,10 +1,10 @@
 import os
 
 import pytest
-from pydantic import ValidationError
 from pydantic_settings import SettingsConfigDict
 
 from src.configcore import Environment, LogLevel, Settings
+from src.configcore.errors import UnknownLogLevelError
 
 
 class TestSettings:
@@ -56,10 +56,12 @@ class TestSettings:
         """Test that invalid log level raises error."""
         os.environ["LOG_LEVEL"] = "invalid"
 
-        with pytest.raises(ValidationError) as exc_info:
+        with pytest.raises(UnknownLogLevelError) as exc_info:
             Settings()
-        assert "log_level" in str(exc_info.value)
-        assert len(exc_info.value.errors()) == 1
+        assert str(exc_info.value) == (
+            "Invalid log level 'invalid'. "
+            "Must be one of: ['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL']"
+        )
 
     def test_is_env_production(self) -> None:
         """Test is_env_production helper method."""
