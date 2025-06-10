@@ -29,7 +29,7 @@ The library focuses on:
 
 ### Prerequisites
 
-- Python 3.12 or higher
+- Python 3.13 or higher
 - [Rye](https://rye.astral.sh) for dependency management
 
 ### Installation
