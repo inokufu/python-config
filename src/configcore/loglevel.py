@@ -2,6 +2,8 @@ import logging
 from enum import IntEnum
 from typing import Self
 
+from .errors import UnknownLogLevelError
+
 
 class LogLevel(IntEnum):
     """Represents the different log levels."""
@@ -23,12 +25,10 @@ class LogLevel(IntEnum):
             LogLevel enum value.
 
         Raises:
-            ValueError: If the string doesn't match any log level.
+            UnknownLogLevelError: If the string doesn't match any log level.
         """
         try:
             return cls[value.upper()]
         except KeyError as e:
             valid_values = [e.name for e in cls]
-            raise ValueError(
-                f"Invalid log level '{value}'. Must be one of: {valid_values}",
-            ) from e
+            raise UnknownLogLevelError(value, valid_values) from e
