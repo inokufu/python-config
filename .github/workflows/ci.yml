@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.12"]  # Add additional versions as needed
+        python-version: ["3.13"]  # Add additional versions as needed
       fail-fast: false
     steps:
       - name: Checkout repository
@@ -81,7 +81,7 @@ jobs:
           path: |
             htmlcov/
             coverage.xml
-        retention-days: 7
+            retention-days: 7
 
   greeting:
     name: Greet first-time contributors
