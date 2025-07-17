@@ -1,6 +1,6 @@
 [project]
 name = "configcore"
-version = "0.1.0"
+version = "0.2.0"
 description = "A flexible, type-safe configuration management library for Python applications."
 authors = [
   { name = "Inokufu", email = "contact@inokufu.com" }

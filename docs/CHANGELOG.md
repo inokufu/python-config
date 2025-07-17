@@ -17,3 +17,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Support for .env file configuration
 - Type-safe configuration with validation
 - Helper methods for environment checking
+
+
+## [0.2.0] - 2025-07-17
+
+### Changed
+
+- Python version to 3.13
+- Upgrade dependencies
