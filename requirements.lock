@@ -16,35 +16,35 @@ babel==2.17.0
     # via mkdocs-material
 backrefs==5.9
     # via mkdocs-material
-certifi==2025.6.15
+certifi==2025.10.5
     # via requests
-charset-normalizer==3.4.2
+charset-normalizer==3.4.4
     # via requests
-click==8.2.1
+click==8.3.0
     # via mkdocs
 colorama==0.4.6
     # via griffe
     # via mkdocs-material
 ghp-import==2.1.0
     # via mkdocs
-griffe==1.7.3
+griffe==1.14.0
     # via griffe-inherited-docstrings
     # via mkdocstrings-python
-griffe-inherited-docstrings==1.1.1
+griffe-inherited-docstrings==1.1.2
     # via configcore
-idna==3.10
+idna==3.11
     # via requests
 jinja2==3.1.6
     # via mkdocs
     # via mkdocs-material
     # via mkdocstrings
-markdown==3.8.2
+markdown==3.9
     # via mkdocs
     # via mkdocs-autorefs
     # via mkdocs-material
     # via mkdocstrings
     # via pymdown-extensions
-markupsafe==3.0.2
+markupsafe==3.0.3
     # via jinja2
     # via mkdocs
     # via mkdocs-autorefs
@@ -57,18 +57,18 @@ mkdocs==1.6.1
     # via mkdocs-autorefs
     # via mkdocs-material
     # via mkdocstrings
-mkdocs-autorefs==1.4.2
+mkdocs-autorefs==1.4.3
     # via mkdocstrings
     # via mkdocstrings-python
 mkdocs-get-deps==0.2.0
     # via mkdocs
-mkdocs-material==9.6.15
+mkdocs-material==9.6.22
     # via configcore
 mkdocs-material-extensions==1.3.1
     # via mkdocs-material
-mkdocstrings==0.29.1
+mkdocstrings==0.30.1
     # via mkdocstrings-python
-mkdocstrings-python==1.16.12
+mkdocstrings-python==1.18.2
     # via configcore
 packaging==25.0
     # via mkdocs
@@ -76,39 +76,39 @@ paginate==0.5.7
     # via mkdocs-material
 pathspec==0.12.1
     # via mkdocs
-platformdirs==4.3.8
+platformdirs==4.5.0
     # via mkdocs-get-deps
-pydantic==2.11.7
+pydantic==2.12.2
     # via pydantic-settings
-pydantic-core==2.33.2
+pydantic-core==2.41.4
     # via pydantic
-pydantic-settings==2.10.1
+pydantic-settings==2.11.0
     # via configcore
 pygments==2.19.2
     # via mkdocs-material
-pymdown-extensions==10.16
+pymdown-extensions==10.16.1
     # via mkdocs-material
     # via mkdocstrings
 python-dateutil==2.9.0.post0
     # via ghp-import
 python-dotenv==1.1.1
     # via pydantic-settings
-pyyaml==6.0.2
+pyyaml==6.0.3
     # via mkdocs
     # via mkdocs-get-deps
     # via pymdown-extensions
     # via pyyaml-env-tag
 pyyaml-env-tag==1.1
     # via mkdocs
-requests==2.32.4
+requests==2.32.5
     # via mkdocs-material
 six==1.17.0
     # via python-dateutil
-typing-extensions==4.14.0
+typing-extensions==4.15.0
     # via pydantic
     # via pydantic-core
     # via typing-inspection
-typing-inspection==0.4.1
+typing-inspection==0.4.2
     # via pydantic
     # via pydantic-settings
 urllib3==2.5.0
