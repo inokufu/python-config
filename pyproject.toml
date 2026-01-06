@@ -1,6 +1,6 @@
 [project]
 name = "configcore"
-version = "0.2.1"
+version = "0.3.0"
 description = "A flexible, type-safe configuration management library for Python applications."
 authors = [
   { name = "Inokufu", email = "contact@inokufu.com" }
@@ -48,6 +48,7 @@ lint.ignore = [
   "INP001", # implicit-namespace-package
   "TRY003", # raise-vanilla-args
   "TRY401", # verbose-log-message
+  "TC", # type-checking blocks
 ]
 lint.extend-unfixable = [
   "TC002", # typing-only-third-party-import

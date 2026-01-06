@@ -20,12 +20,12 @@ class Settings(BaseSettings, ConfigContract):
     environment: Annotated[
         Environment,
         BeforeValidator(lambda v: Environment[v.upper()] if isinstance(v, str) else v),
-    ] = Field(default=Environment.PRODUCTION.value)
+    ] = Field(default=Environment.PRODUCTION)
 
     log_level: Annotated[
         LogLevel,
         BeforeValidator(lambda v: LogLevel.from_str(v) if isinstance(v, str) else v),
-    ] = Field(default=LogLevel.INFO.name)
+    ] = Field(default=LogLevel.INFO)
 
     @override
     def get_environment(self) -> Environment:
