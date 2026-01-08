@@ -1,9 +1,9 @@
 # Changes here will be overwritten by Copier
-_commit: c761526
+_commit: b3a2452
 _src_path: git@github.com:inokufu/python-project-template.git
 author_email: contact@inokufu.com
 author_name: Inokufu
-min_python_version: '3.13'
+min_python_version: '3.14'
 package_name: configcore
 project_description: ConfigCore
 project_name: ConfigCore
