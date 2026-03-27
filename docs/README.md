@@ -30,7 +30,7 @@ The library focuses on:
 
 ### Prerequisites
 
-- Python 3.14 or higher
+- Python 3.13 or higher
 - [uv](https://docs.astral.sh/uv/) for dependency management
 
 ### Installation
