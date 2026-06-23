@@ -30,13 +30,13 @@ jobs:
       - name: Install dependencies
         run: make install
 
-      - name: Cache pre-commit
+      - name: Cache prek
         uses: actions/cache@v4
         with:
-          path: ~/.cache/pre-commit
-          key: pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}
+          path: ~/.cache/prek
+          key: prek-${{ hashFiles('.pre-commit-config.yaml') }}
 
-      - name: Run pre-commit checks
+      - name: Run prek checks
         run: make precommit
 
       - name: Lint GitHub Actions
