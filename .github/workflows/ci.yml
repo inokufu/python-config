@@ -10,6 +10,9 @@ on:
 #  schedule:
 #    - cron: "0 0 * * 0"  # Weekly on Sundays
 
+permissions:
+  contents: read
+
 jobs:
   lint:
     name: Lint
@@ -17,6 +20,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Install uv
         id: setup-uv
@@ -49,6 +54,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Install uv
         id: setup-uv
@@ -70,19 +77,3 @@ jobs:
           path: |
             htmlcov/
             coverage.xml
-
-  greeting:
-    name: Greet first-time contributors
-    runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' || github.event_name == 'issues'
-    permissions:
-      issues: write
-      pull-requests: write
-    steps:
-      - uses: actions/first-interaction@v1
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          pr-message: 'Hello @${{ github.actor }}, thank you for submitting a PR! We will review it soon.'
-          issue-message: |
-            Hello @${{ github.actor }}, thank you for your interest in our project!
-            If this is a bug report, please provide screenshots and steps to reproduce your issue.
