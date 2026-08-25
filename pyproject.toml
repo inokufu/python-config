@@ -1,6 +1,6 @@
 [project]
 name = "configcore"
-version = "0.3.3"
+version = "0.4.0"
 description = "A flexible, type-safe configuration management library for Python applications."
 authors = [
   { name = "Inokufu", email = "contact@inokufu.com" }
@@ -9,7 +9,7 @@ readme = "docs/README.md"
 requires-python = ">= 3.13"
 
 dependencies = [
-    "pydantic-settings>=2.14.2,<2.15.0",
+    "pydantic-settings>=2.15.0,<2.16.0",
 ]
 
 [tool.uv]
@@ -18,17 +18,17 @@ package = true
 
 [dependency-groups]
 dev = [
-    "diff-cover>=10.3.0,<10.4.0",
+    "diff-cover>=10.5.1,<10.6.0",
     "griffe-inherited-docstrings>=1.1.3,<1.2.0",
     "mkdocs>=1.6.1,<1.7.0",
-    "mkdocs-material>=9.7.6,<9.8.0",
-    "mkdocstrings-python>=2.0.5,<2.1.0",
-    "prek>=0.4.5,<0.4.6",
+    "mkdocs-material>=9.7.7,<9.8.0",
+    "mkdocstrings-python>=2.0.7,<2.1.0",
+    "prek>=0.4.14,<0.4.15",
     "pytest>=9.1.1,<9.2.0",
     "pytest-cov>=7.1.0,<7.2.0",
     "pytest-mock>=3.15.1,<3.16.0",
-    "ruff>=0.15.18,<0.15.19",
-    "ty>=0.0.51,<0.0.52",
+    "ruff>=0.16.4,<0.16.5",
+    "ty>=0.0.74,<0.0.75",
 ]
 
 [tool.ruff]
@@ -50,6 +50,7 @@ lint.ignore = [
   "TRY003", # raise-vanilla-args
   "TRY401", # verbose-log-message
   "TC", # type-checking blocks
+  "CPY", # flake8-copyright
 ]
 lint.extend-unfixable = [
   "TC002", # typing-only-third-party-import

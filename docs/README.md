@@ -54,18 +54,18 @@ from pydantic import Field
 
 
 class MyAppSettings(Settings):
-  """Application-specific settings extending the base Settings class."""
+    """Application-specific settings extending the base Settings class."""
 
-  # Add your application-specific settings
-  api_url: str = Field(default="https://api.example.com")
-  max_retry_count: int = Field(default=3, ge=1)
-  timeout_seconds: float = Field(default=30.0)
+    # Add your application-specific settings
+    api_url: str = Field(default="https://api.example.com")
+    max_retry_count: int = Field(default=3, ge=1)
+    timeout_seconds: float = Field(default=30.0)
 
-  # Add custom methods as needed
-  def get_api_timeout(self) -> float:
-    if self.is_env_production():
-      return self.timeout_seconds
-    return self.timeout_seconds * 2
+    # Add custom methods as needed
+    def get_api_timeout(self) -> float:
+        if self.is_env_production():
+            return self.timeout_seconds
+        return self.timeout_seconds * 2
 ```
 
 ### Using Your Configuration
